@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Rozhrani nakupniho kosiku
  * @author kozelto1
- *
  */
 public interface Kosik {
 	/**
