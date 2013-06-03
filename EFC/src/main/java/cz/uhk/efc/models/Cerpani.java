@@ -2,15 +2,10 @@ package cz.uhk.efc.models;
 
 import java.util.Date;
 
-import javax.persistence.*;
-
-@Entity
 public class Cerpani {
 	
 	// trida predstavujici samotne cerpani
 	
-	@Id
-	@GeneratedValue
 	private int id; // Primary Key; bude poreba?
 	private Vozidlo vozidlo; // to ktere cerpalo
 	//palivo je v definici vozidla
