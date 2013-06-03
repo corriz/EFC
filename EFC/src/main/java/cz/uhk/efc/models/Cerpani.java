@@ -2,10 +2,15 @@ package cz.uhk.efc.models;
 
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
 public class Cerpani {
 	
 	// trida predstavujici samotne cerpani
 	
+	@Id
+	@GeneratedValue
 	private int id; // Primary Key; bude poreba?
 	private Vozidlo vozidlo; // to ktere cerpalo
 	//palivo je v definici vozidla
@@ -13,6 +18,7 @@ public class Cerpani {
 	private Date datumCerpani; //kdy se cerpalo
 	private float mnozstvi; // pocet cerpanych litru
 	private double jednotkovaCena; // cena za litr, muzeme zamenit za celkovou cenu a potom se bude dat cena za litr vypocitat
+	
 	public int getId() {
 		return id;
 	}
