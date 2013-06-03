@@ -1,8 +1,9 @@
 package cz.uhk.efc.models;
 
+
+
 public class Palivo {
 	// trida pro definici ruznych paliv
-	
 	
 	private int id; // nevim zda je potreba, ale predpokladam, ze to bude Primary Key
 	private String nazev;
