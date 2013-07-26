@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cz.uhk</groupId>
 	<artifactId>efc</artifactId>
-	<name>MoroServer</name>
+	<name>EFC</name>
 	<version>1.0.0</version>
 	<properties>
 		<java-version>1.6</java-version>

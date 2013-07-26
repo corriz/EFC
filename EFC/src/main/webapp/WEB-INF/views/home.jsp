@@ -1,14 +1,13 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<h1>
-	Hello world!  
-</h1>
+<%@ include file="/WEB-INF/views/includes.jsp" %>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<%@page pageEncoding="UTF-8"%>
 
-<P>  The time on the server is ${serverTime}. </P>
-</body>
-</html>
+<h1>Evidence spotřeby vozidel</h1>
+<p>
+	Use this document as a way to quick start any new project.<br>
+	All you get is this message and a barebones HTML document.
+</p>
+
+<%@ include file="/WEB-INF/views/footer.jsp" %>
+
