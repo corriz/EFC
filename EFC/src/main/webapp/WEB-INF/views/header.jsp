@@ -31,7 +31,11 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
+						<li><a href="#refueling">Čerpání</a></li>
+						<li><a href="#repair">Opravy a Servis</a></li>
+						<li><a href="#drivers">Řidiči</a></li>
+						<li><a href="#cars">Auta</a></li>
+						<li><a href="#about">Settings</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div>

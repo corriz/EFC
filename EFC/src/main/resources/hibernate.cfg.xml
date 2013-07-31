@@ -5,6 +5,10 @@
 <hibernate-configuration>
 	<session-factory>
 		<mapping class="cz.uhk.efc.model.Drivers"></mapping>
-		<mapping class="cz.uhk.efc.model.BranchOffice"></mapping>
+		<mapping class="cz.uhk.efc.model.Costs"></mapping>
+		<mapping class="cz.uhk.efc.model.Cars"></mapping>
+		<mapping class="cz.uhk.efc.model.Fuel"></mapping>
+		<mapping class="cz.uhk.efc.model.Refueling"></mapping>
+		<mapping class="cz.uhk.efc.model.Stats"></mapping>
 	</session-factory>
 </hibernate-configuration>

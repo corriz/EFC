@@ -4,13 +4,13 @@
 package cz.uhk.efc.model;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,13 +19,11 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "RIDICI")
 public class Drivers implements Serializable {
 	
 	private static final long serialVersionUID = -7206099558342858789L;
 
 	@Id
-	@Column (name = "ridic_id")
 	@GeneratedValue
 	private int id;
 		
@@ -33,10 +31,9 @@ public class Drivers implements Serializable {
 	private String lastname;
 	private String own_number;
 	
-	@OneToMany
-	@Column (name = "pobocka_id")
-	private Set<BranchOffice> branchOffice;
-
+	@ManyToMany(mappedBy = "drivers")
+	private List<Cars> cars = new ArrayList<Cars>();
+	
 	public int getId() {
 		return id;
 	}
@@ -69,16 +66,11 @@ public class Drivers implements Serializable {
 		this.own_number = own_number;
 	}
 
-	public Set<BranchOffice> getBranchOffice() {
-		return branchOffice;
+	public List<Cars> getCars() {
+		return cars;
 	}
 
-	public void setBranchOffice(Set<BranchOffice> branchOffice) {
-		this.branchOffice = branchOffice;
+	public void setCars(List<Cars> cars) {
+		this.cars = cars;
 	}
-
-	
-	
-	
-	
 }

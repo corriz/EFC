@@ -3,10 +3,74 @@
  */
 package cz.uhk.efc.model;
 
-/**
- * @author corri
- *
- */
-public class Refueling {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+/**
+ * Trida predstavujici samotne cerpani
+ * 
+ * @author corri
+ * 
+ */
+@Entity
+public class Refueling implements Serializable {
+
+	private static final long serialVersionUID = 4518351960899574550L;
+
+	/**
+	 * Primary Key; 
+	 */
+	@Id
+	@GeneratedValue
+	private int id;
+
+	/**
+	 * To ktere cerpalo palivo je v definici vozidla 
+	 */
+	@ManyToOne
+	@JoinColumn(name = "car_id")
+	private Cars car;
+	
+	/**
+	 * Pocet cerpanych litru
+	 */
+	private float amount;
+	
+	/**
+	 * Pridelene statistiky k tomuto vydaji, kilometry + datum + cena celkem 
+	 */
+	@ManyToOne
+	@JoinColumn(name = "stat_id")
+	private Stats stat;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Cars getCar() {
+		return car;
+	}
+	public void setCar(Cars car) {
+		this.car = car;
+	}
+	public float getAmount() {
+		return amount;
+	}
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+	public Stats getStat() {
+		return stat;
+	}
+	public void setStat(Stats stat) {
+		this.stat = stat;
+	}
+	
 }
