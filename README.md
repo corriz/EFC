@@ -7,3 +7,21 @@ Aplikace poté umožní k vozidlům evidovat jednotlivá čerpání s datumem, s
 možné záznamy zobrazit v přehledném reportu.
 
 Součástí aplikace bude i zveřejněné API pomocí webové služby, které umožní zadávání záznamů o čerpání z klientských zařízení.
+
+
+ECLIPSE
+===
+Pri integraci do eclipse spamzte 
+.settings
+.project
+.classpath
+.springBeans
+
+
+Dekuji.
+Pred kazdym stazenim:
+- Commit : pokud se udelali nejake zmeny
+- Pull : stazeni a merge vsech novinek
+- push to upstream : uload na git
+
+Diky, vzdy uploadujte fungujici verzi
