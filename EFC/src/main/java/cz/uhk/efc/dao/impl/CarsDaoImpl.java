@@ -2,36 +2,43 @@ package cz.uhk.efc.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import cz.uhk.efc.dao.CarsDao;
 import cz.uhk.efc.model.Cars;
 
+@Repository
 public class CarsDaoImpl implements CarsDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
 	
+	private Session getCurrentSession(){
+		return sessionFactory.getCurrentSession();
+	}
+	
 	@Override
 	public Cars get(int id) {
-		return (Cars) sessionFactory.getCurrentSession().get(Cars.class, id);
+		return (Cars) getCurrentSession().get(Cars.class, id);
 	}
 
 	@Override
 	public void save(Cars car) {
-		sessionFactory.getCurrentSession().merge(car);
+		getCurrentSession().merge(car);
 	}
 
 	@Override
 	public void delete(Cars car) {
-		sessionFactory.getCurrentSession().delete(car);
+		getCurrentSession().delete(car);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cars> findAll() {
-		return sessionFactory.getCurrentSession().createSQLQuery("FROM cars ORDER BY id").list();
+		return getCurrentSession().createSQLQuery("FROM cars ORDER BY id").list();
 	}
 
 }

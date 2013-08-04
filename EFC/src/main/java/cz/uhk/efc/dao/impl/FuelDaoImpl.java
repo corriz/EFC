@@ -5,8 +5,10 @@ package cz.uhk.efc.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import cz.uhk.efc.dao.FuelDao;
 import cz.uhk.efc.model.Fuel;
@@ -15,17 +17,22 @@ import cz.uhk.efc.model.Fuel;
  * @author corri
  *
  */
+@Repository
 public class FuelDaoImpl implements FuelDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
+	
+	private Session getCurrentSession(){
+		return sessionFactory.getCurrentSession();
+	}
 	
 	/* (non-Javadoc)
 	 * @see cz.uhk.efc.dao.FuelDao#get(int)
 	 */
 	@Override
 	public Fuel get(int id) {
-		return (Fuel) sessionFactory.getCurrentSession().get(Fuel.class, id);
+		return (Fuel) getCurrentSession().get(Fuel.class, id);
 	}
 
 	/* (non-Javadoc)
@@ -33,7 +40,7 @@ public class FuelDaoImpl implements FuelDao {
 	 */
 	@Override
 	public void save(Fuel fuel) {
-		sessionFactory.getCurrentSession().merge(fuel);
+		getCurrentSession().merge(fuel);
 	}
 
 	/* (non-Javadoc)
@@ -41,7 +48,7 @@ public class FuelDaoImpl implements FuelDao {
 	 */
 	@Override
 	public void delete(Fuel fuel) {
-		sessionFactory.getCurrentSession().delete(fuel);
+		getCurrentSession().delete(fuel);
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +57,7 @@ public class FuelDaoImpl implements FuelDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Fuel> findAll() {
-		return sessionFactory.getCurrentSession().createQuery("FROM fuel ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM fuel ORDER BY id").list();
 	}
 
 }
