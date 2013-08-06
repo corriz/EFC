@@ -38,7 +38,7 @@ public class DriversDaoImpl implements DriversDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Drivers> findAll() {
-		return getCurrentSession().createQuery("FROM drivers ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM Drivers ORDER BY id").list();
 	}
 
 }

@@ -1,13 +1,18 @@
-<%@ include file="/WEB-INF/views/includes.jsp" %>
-<%@ include file="/WEB-INF/views/header.jsp" %>
+<%@ include file="/WEB-INF/views/includes.jsp"%>
+<%@ include file="/WEB-INF/views/header.jsp"%>
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
 
-<h1>Evidence spotřeby vozidel</h1>
-<p>
-	Use this document as a way to quick start any new project.<br>
-	All you get is this message and a barebones HTML document.
-</p>
+<article class="uk-article">
+	<hgroup>
+		<h1 class="uk-acticle-title">Hi my web</h1>
+	</hgroup>
+	<p class="uk-article-meta">This si my meta tag</p>
+	<p class="uk-article-lead">This is template for each backgroud from
+		Roman Michalcik</p>
+	<p>Lorem ipsim.....</p>
 
-<%@ include file="/WEB-INF/views/footer.jsp" %>
+</article>
+
+<%@ include file="/WEB-INF/views/footer.jsp"%>
 

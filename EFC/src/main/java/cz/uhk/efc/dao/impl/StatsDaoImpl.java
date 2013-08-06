@@ -57,7 +57,7 @@ public class StatsDaoImpl implements StatsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Stats> findAll() {
-		return getCurrentSession().createQuery("FROM stats ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM Stats ORDER BY id").list();
 	}
 
 }

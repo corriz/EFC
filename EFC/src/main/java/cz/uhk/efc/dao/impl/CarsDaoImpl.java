@@ -38,7 +38,7 @@ public class CarsDaoImpl implements CarsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cars> findAll() {
-		return getCurrentSession().createSQLQuery("FROM cars ORDER BY id").list();
+		return getCurrentSession().createSQLQuery("FROM Cars ORDER BY id").list();
 	}
 
 }

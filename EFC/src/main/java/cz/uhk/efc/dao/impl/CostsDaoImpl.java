@@ -45,7 +45,7 @@ public class CostsDaoImpl implements CostsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Costs> findAll() {
-		return getCurrentSession().createQuery("FROM costs ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM Costs ORDER BY id").list();
 	}
 
 }

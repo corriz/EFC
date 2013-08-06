@@ -57,7 +57,7 @@ public class FuelDaoImpl implements FuelDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Fuel> findAll() {
-		return getCurrentSession().createQuery("FROM fuel ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM Fuel ORDER BY id").list();
 	}
 
 }

@@ -2,47 +2,47 @@
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Evidence spotřeby vozidel</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8" />
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<style>
-		body {
-			padding-top: 60px;
-			/* 60px to make the container go all the way to the bottom of the topbar */
-		}
-	</style>
-	<link href="css/main.css" rel="stylesheet" media="screen">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>My Template</title>
 
-</head>
-<body>
+	<link href="<spring:url value="/css/uikit.min.css" />" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="my-background">
+	<nav class="tm-navbar uk-navbar uk-navbar-attached">
+	    <div class="uk-container uk-containter-center">
+		<a class="uk-navbar-brand uk-hidden-small" href="#">
+		    My UIKIT template
+		</a>
+		<ul class="uk-navbar-nav uk-hidden-small">
+		    <li><a href="#">Domů</a></li>
+		    <li><a href="#"></a></li>
+		    <li><a href="#"></a></li>
+		</ul>
+		<a href="#my-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+	    </div>
+	</nav>
 
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#">Evidence spotřeby vozidel</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#refueling">Čerpání</a></li>
-						<li><a href="#repair">Opravy a Servis</a></li>
-						<li><a href="#drivers">Řidiči</a></li>
-						<li><a href="#cars">Auta</a></li>
-						<li><a href="#about">Settings</a></li>
-						<li><a href="#contact">Contact</a></li>
+	<div class="my-middle">
+	    <div class="uk-container uk-containter-center">
+	    	<div class="uk-grid" data-uk-grid-margin>
+	    		<aside class="my-sidebar uk-width-medium-1-4 uk-hidden-small">
+					<ul class="tm-nav uk-nav" data-uk-nav>
+					    <li class="uk-nav-header">Header 1</li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+		
+					    <li class="uk-nav-header">Header 2</li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+		
+					    <li class="uk-nav-header">Header 3</li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
 					</ul>
-				</div>
-				<!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
+			    </aside>
+			    <div class="my-main uk-width-medium-3-4">
 	<!-- CONTENT -->

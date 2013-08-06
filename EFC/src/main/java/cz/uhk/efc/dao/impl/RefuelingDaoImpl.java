@@ -57,7 +57,7 @@ public class RefuelingDaoImpl implements RefuelingDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Refueling> findAll() {
-		return getCurrentSession().createQuery("FROM refueling ORDER BY id").list();
+		return getCurrentSession().createQuery("FROM Refueling ORDER BY id").list();
 	}
 
 }
