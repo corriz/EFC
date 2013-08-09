@@ -8,6 +8,10 @@ možné záznamy zobrazit v přehledném reportu.
 
 Součástí aplikace bude i zveřejněné API pomocí webové služby, které umožní zadávání záznamů o čerpání z klientských zařízení.
 
+DB: MySQL
+DB layer: Hibernate
+Web: Spring MVC
+Design: UIkit http://getuikit.com/
 
 ECLIPSE
 ===
