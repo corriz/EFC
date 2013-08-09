@@ -15,7 +15,7 @@
 		    My UIKIT template
 		</a>
 		<ul class="uk-navbar-nav uk-hidden-small">
-		    <li><a href="#">Domů</a></li>
+		    <li><a href="<spring:url value="/" />">Domů</a></li>
 		    <li><a href="#"></a></li>
 		    <li><a href="#"></a></li>
 		</ul>
@@ -28,17 +28,22 @@
 	    	<div class="uk-grid" data-uk-grid-margin>
 	    		<aside class="my-sidebar uk-width-medium-1-4 uk-hidden-small">
 					<ul class="tm-nav uk-nav" data-uk-nav>
-					    <li class="uk-nav-header">Header 1</li>
+					    <li class="uk-nav-header">Refueling</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 		
-					    <li class="uk-nav-header">Header 2</li>
+					    <li class="uk-nav-header">Costs</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 		
-					    <li class="uk-nav-header">Header 3</li>
+					    <li class="uk-nav-header">Drivers</li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+					    <li><a href="">link</a></li>
+					    
+					    <li class="uk-nav-header">Settings</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>

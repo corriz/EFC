@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,6 +18,7 @@ import cz.uhk.efc.services.DriversService;
  *
  */
 @Controller
+@RequestMapping("/drivers")
 public class DriversController {
 
 	private static final Logger logger = LoggerFactory.getLogger(DriversController.class);
@@ -28,10 +30,11 @@ public class DriversController {
 		this.driversService = drivers;
 	}
 	
-	@RequestMapping("/drivers/default/")
-	public ModelMap vetsHandler() {
+	@RequestMapping("/")
+	public String renderView(Model model) {
 		logger.info("Show all Drivers in database");
-		return new ModelMap(driversService.findAll());
+		model.addAttribute("drivers", driversService.findAll());
+		return "/drivers/default";
 	} 
 	
 	
