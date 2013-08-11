@@ -9,7 +9,7 @@
 	<div class="tm-footer">
 	    <div class="uk-container uk-container-center uk-text-center">
 		<div class="uk-panel">
-		    <p>Made by <a href="#">Roman Michalcik</a>.</p>
+		    <p>Made by <a href="#">Roman Michalcik</a> and <a href="#">Pavel Pech</a>.</p>
 		</div>
 
 	    </div>
