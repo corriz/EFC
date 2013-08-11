@@ -31,9 +31,9 @@
 	    		<aside class="my-sidebar uk-width-medium-1-4 uk-hidden-small">
 					<ul class="tm-nav uk-nav" data-uk-nav>
 					    <li class="uk-nav-header">Čerpání</li>
-					    <li><a href="<spring:url value="drivers/" />">Přehled</a></li>
-					    <li><a href="<spring:url value="list/" />">Seznam</a></li>
-					    <li><a href="<spring:url value="add/" />">Přidat</a></li>
+					    <li><a href="<spring:url value="/drivers/" />">Přehled</a></li>
+					    <li><a href="<spring:url value="/drivers/list/" />">Seznam</a></li>
+					    <li><a href="<spring:url value="/drivers/add/" />">Přidat</a></li>
 					    		
 					    <li class="uk-nav-header">Další výdaje</li>
 					    <li><a href="">link</a></li>

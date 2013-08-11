@@ -18,7 +18,6 @@ import cz.uhk.efc.services.DriversService;
  *
  */
 @Controller
-@RequestMapping("/drivers")
 public class DriversController {
 
 	private static final Logger logger = LoggerFactory.getLogger(DriversController.class);
@@ -31,27 +30,27 @@ public class DriversController {
 	}
 	
 	//TODO dodelat přehled 
-	@RequestMapping("/")
+	@RequestMapping("drivers/")
 	public String renderOverView(Model model) {
 		logger.info("Show complet overview for Drivers");
 		model.addAttribute("drivers", driversService.findAll());
-		return "/drivers/default";
+		return "drivers/default";
 	} 
 	
 	//TODO dodelat zobrazeni tabulky ridicu
-	@RequestMapping("/list/")
+	@RequestMapping("drivers/list/")
 	public String renderList(Model model) {
 		logger.info("Show all Drivers in database");
 		model.addAttribute("drivers", driversService.findAll());
-		return "/drivers/list";
+		return "drivers/list";
 	} 
 	
 	//TODO dodelat pridani + formular
-	@RequestMapping("/add/")
+	@RequestMapping("drivers/add/")
 	public String renderAdd(Model model) {
 		logger.info("Add new Driver in database");
 		model.addAttribute("drivers", driversService.findAll());
-		return "/drivers/add";
+		return "drivers/add";
 	} 
 	
 	//TODO Add edit driver
