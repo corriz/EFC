@@ -3,6 +3,6 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
 
-<h1>Drivers</h1>
+<h1>Přehled pro řidiče</h1>
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>

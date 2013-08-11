@@ -30,12 +30,31 @@ public class DriversController {
 		this.driversService = drivers;
 	}
 	
+	//TODO dodelat přehled 
 	@RequestMapping("/")
-	public String renderView(Model model) {
-		logger.info("Show all Drivers in database");
+	public String renderOverView(Model model) {
+		logger.info("Show complet overview for Drivers");
 		model.addAttribute("drivers", driversService.findAll());
 		return "/drivers/default";
 	} 
+	
+	//TODO dodelat zobrazeni tabulky ridicu
+	@RequestMapping("/list/")
+	public String renderList(Model model) {
+		logger.info("Show all Drivers in database");
+		model.addAttribute("drivers", driversService.findAll());
+		return "/drivers/list";
+	} 
+	
+	//TODO dodelat pridani + formular
+	@RequestMapping("/add/")
+	public String renderAdd(Model model) {
+		logger.info("Add new Driver in database");
+		model.addAttribute("drivers", driversService.findAll());
+		return "/drivers/add";
+	} 
+	
+	//TODO Add edit driver
 	
 	
 }

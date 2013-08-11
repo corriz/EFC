@@ -18,7 +18,7 @@
 	<div id="my-offcanvas" class="uk-offcanvas">
 	    <div class="uk-offcanvas-bar">
 		<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
-		    <li class="uk-parent"><a href="#"><i class="uk-icon-ok"></i> Home</a>
+		    <li class="uk-parent"><a href="#"><i class="uk-icon-ok"></i> Domů</a>
 			<ul class="uk-nav-sub">
 			    <li><a href="#">Link 1</a></li>
 			    <li><a href="#">Link 2</a></li>
@@ -26,7 +26,7 @@
 			    <li><a href="#">Link 4</a></li>
 			</ul>
 		    </li>
-		    <li class="uk-parent"><a href="#"><i class="uk-icon-folder-open"></i> Page 2</a>
+		    <li class="uk-parent"><a href="#"><i class="uk-icon-folder-open"></i> Čerpání</a>
 			<ul class="uk-nav-sub">
 			    <li><a href="#">Link 1</a></li>
 			    <li><a href="#">Link 2</a></li>
@@ -34,7 +34,15 @@
 			    <li><a href="#">Link 4</a></li>
 			</ul>
 		    </li>
-		    <li class="uk-parent"><a href="#"><i class="uk-icon-magic"></i> Page 3</a>
+		    <li class="uk-parent"><a href="#"><i class="uk-icon-magic"></i> Řidiči</a>
+			<ul class="uk-nav-sub">
+			    <li><a href="#">Link 1</a></li>
+			    <li><a href="#">Link 2</a></li>
+			    <li><a href="#">Link 3</a></li>
+			    <li><a href="#">Link 4</a></li>
+			</ul>
+		    </li>
+		    <li class="uk-parent"><a href="#"><i class="uk-icon-magic"></i> Nastavení</a>
 			<ul class="uk-nav-sub">
 			    <li><a href="#">Link 1</a></li>
 			    <li><a href="#">Link 2</a></li>

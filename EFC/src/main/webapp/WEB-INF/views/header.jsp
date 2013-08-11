@@ -16,8 +16,10 @@
 		</a>
 		<ul class="uk-navbar-nav uk-hidden-small">
 		    <li><a href="<spring:url value="/" />">Domů</a></li>
-		    <li><a href="#"></a></li>
-		    <li><a href="#"></a></li>
+		    <li><a href="#">Čerpání</a></li>
+		    <li><a href="#">Další výdaje</a></li>
+		    <li><a href="<spring:url value="drivers/" />">Řidiči</a></li>
+		    <li><a href="#">Nastavení</a></li>
 		</ul>
 		<a href="#my-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 	    </div>
@@ -28,22 +30,22 @@
 	    	<div class="uk-grid" data-uk-grid-margin>
 	    		<aside class="my-sidebar uk-width-medium-1-4 uk-hidden-small">
 					<ul class="tm-nav uk-nav" data-uk-nav>
-					    <li class="uk-nav-header">Refueling</li>
+					    <li class="uk-nav-header">Čerpání</li>
+					    <li><a href="<spring:url value="drivers/" />">Přehled</a></li>
+					    <li><a href="<spring:url value="list/" />">Seznam</a></li>
+					    <li><a href="<spring:url value="add/" />">Přidat</a></li>
+					    		
+					    <li class="uk-nav-header">Další výdaje</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 		
-					    <li class="uk-nav-header">Costs</li>
-					    <li><a href="">link</a></li>
-					    <li><a href="">link</a></li>
-					    <li><a href="">link</a></li>
-		
-					    <li class="uk-nav-header">Drivers</li>
+					    <li class="uk-nav-header">Řidiči</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    
-					    <li class="uk-nav-header">Settings</li>
+					    <li class="uk-nav-header">Nastavení</li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
 					    <li><a href="">link</a></li>
