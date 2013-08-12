@@ -14,6 +14,13 @@
 		<div class="uk-form-row">
 			<input type="text" placeholder="Příjmení" />
 		</div>
+		<div class="uk-form-row">
+			<select multiple>
+				<option>Volvo</option>
+				<option>Skoda</option>
+				<option>Seat</option>
+			</select>
+		</div>
 	</fieldset>
 </form>
 
