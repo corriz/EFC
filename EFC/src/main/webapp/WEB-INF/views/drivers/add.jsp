@@ -9,17 +9,13 @@
 	<fieldset>
 		<legend>Formulář pro přidání řidiče</legend>
 		<div class="uk-form-row">
-			<input type="text" placeholder="Jméno" />
+			<input type="text" placeholder="Jméno" class="uk-form-width-medium" />
 		</div>
 		<div class="uk-form-row">
-			<input type="text" placeholder="Příjmení" />
+			<input type="text" placeholder="Příjmení" class="uk-form-width-medium" />
 		</div>
 		<div class="uk-form-row">
-			<select multiple>
-				<option>Volvo</option>
-				<option>Skoda</option>
-				<option>Seat</option>
-			</select>
+			<button type="submit" class="uk-button">Submit</button>
 		</div>
 	</fieldset>
 </form>

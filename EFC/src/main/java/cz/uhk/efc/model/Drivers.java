@@ -7,10 +7,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  * All driver
@@ -31,7 +32,7 @@ public class Drivers implements Serializable {
 	private String lastname;
 	private String own_number;
 	
-	@ManyToMany(mappedBy = "drivers")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "driver")
 	private List<Cars> cars = new ArrayList<Cars>();
 	
 	public int getId() {

@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 /**
@@ -52,11 +50,9 @@ public class Cars implements Serializable{
 	 * Many to Many
 	 * Jeden ridic muze ridit vice aut, jedno auto muze ridit vice ridicu 
 	 */
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "driver_car", 
-	joinColumns = {@JoinColumn(name = "car_id")}, 
-	inverseJoinColumns = {@JoinColumn(name = "driver_id")})
-	private List<Drivers> drivers = new ArrayList<Drivers>();
+	@ManyToOne
+	@JoinColumn(name="driver_id")
+	Drivers driver;
 	
 	/**
 	 * One to many
@@ -129,11 +125,12 @@ public class Cars implements Serializable{
 	public void setMade(String made) {
 		this.made = made;
 	}
-	public List<Drivers> getDrivers() {
-		return drivers;
+	
+	public Drivers getDriver() {
+		return driver;
 	}
-	public void setDrivers(List<Drivers> drivers) {
-		this.drivers = drivers;
+	public void setDriver(Drivers driver) {
+		this.driver = driver;
 	}
 	public List<Refueling> getRefuelings() {
 		return refuelings;
