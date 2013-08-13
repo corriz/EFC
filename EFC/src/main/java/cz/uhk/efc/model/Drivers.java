@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * All driver
  * @author corri
@@ -27,13 +29,19 @@ public class Drivers implements Serializable {
 	@Id
 	@GeneratedValue
 	private int id;
-		
+	
+	@NotEmpty
 	private String firstname;
+	@NotEmpty
 	private String lastname;
+	
 	private String own_number;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "driver")
 	private List<Cars> cars = new ArrayList<Cars>();
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "driver")
+	private List<Refueling> refueling = new ArrayList<Refueling>();
 	
 	public int getId() {
 		return id;

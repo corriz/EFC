@@ -48,6 +48,16 @@ public class Refueling implements Serializable {
 	@JoinColumn(name = "stat_id")
 	private Stats stat;
 	
+	@ManyToOne
+	@JoinColumn(name = "driver_id")
+	private Drivers driver;
+	
+	public Drivers getDriver() {
+		return driver;
+	}
+	public void setDriver(Drivers driver) {
+		this.driver = driver;
+	}
 	public int getId() {
 		return id;
 	}

@@ -5,19 +5,19 @@
 
 <h1>Přidat řidiče</h1>
 
-<form class="uk-form">
+<form:form cssClass="uk-form" modelAttribute="driversCommand">
 	<fieldset>
 		<legend>Formulář pro přidání řidiče</legend>
 		<div class="uk-form-row">
-			<input type="text" placeholder="Jméno" class="uk-form-width-medium" />
+			<form:input type="text" path="firstname" placeholder="Jméno" cssClass="uk-form-width-medium" />
 		</div>
 		<div class="uk-form-row">
-			<input type="text" placeholder="Příjmení" class="uk-form-width-medium" />
+			<form:input type="text" path="lastname" placeholder="Příjmení" cssClass="uk-form-width-medium" />
 		</div>
 		<div class="uk-form-row">
-			<button type="submit" class="uk-button">Submit</button>
+			<form:button type="submit" cssClass="uk-button">Submit</form:button>
 		</div>
 	</fieldset>
-</form>
+</form:form>
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>
