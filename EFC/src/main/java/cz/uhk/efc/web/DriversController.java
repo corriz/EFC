@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cz.uhk.efc.factory.DriversCommand;
@@ -33,7 +34,7 @@ public class DriversController {
 	
 	@Autowired
 	private DriversService driversService;
-
+	
 	//TODO dodelat přehled 
 	@RequestMapping("drivers/")
 	public String renderOverView(Model model) {
@@ -43,7 +44,7 @@ public class DriversController {
 	} 
 	
 	//TODO dodelat zobrazeni tabulky ridicu
-	@RequestMapping("drivers/list/")
+	@RequestMapping(value="drivers/list/", method= RequestMethod.GET )
 	public String renderList(Model model) {
 		logger.info("Show all Drivers in database");
 		model.addAttribute("drivers", driversService.findAll());
@@ -51,11 +52,12 @@ public class DriversController {
 	} 
 	
 	@RequestMapping(value="drivers/add/", method = RequestMethod.GET)
-	public void renderAdd(Model model, @ModelAttribute DriversCommand driversCommand){
+	public void renderAdd(Model model, @ModelAttribute DriversCommand driversCommand,@RequestParam(required=false) Integer id){
+		
 	}
 	
 	@RequestMapping(value="drivers/add/", method = RequestMethod.POST)
-	public String renderAdd(@Valid DriversCommand driverCommand, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+	public String submitAdd(@Valid DriversCommand driverCommand, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
 		logger.info("Additing new Driver in database");
 		if(result.hasErrors()){
 			logger.info("Here is Error while additing to DB");
