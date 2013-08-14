@@ -27,24 +27,24 @@ public interface CarService {
 	 * Jednoduche mazani ridice
 	 * @param driver
 	 */
-	void delete(Cars car);
+	void delete(Cars driver);
 	
 	
 	/**
 	 * Ulozi vsechny ridice
 	 * @param driversGrid
 	 */
-	void saveAll(ProjectGrid<?> driversGrid);
+	void saveAll(ProjectGrid<Cars> carsGrid);
 	
 	/**
 	 * Update all drivers
 	 * @param driversGrid
 	 */
-	void updateAll(ProjectGrid<?> driversGrid);
+	void updateAll(ProjectGrid<Cars> carsGrid);
 	
 	/**
 	 * Najdi vsechny
 	 * @return
 	 */
-	ProjectGrid<?> findAll();
+	ProjectGrid<Cars> findAll();
 }

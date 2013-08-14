@@ -10,38 +10,41 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import cz.uhk.efc.model.Drivers;
-
 /**
  * @author corri
  *
  */
-public class ProjectGrid <T extends Serializable> {
-
-
+public class ProjectGrid <T> {
+	
 	@Valid
-	private Map<Integer, Drivers> driversMap;
+	private Map<Integer, T> map;
 	
 	public ProjectGrid() {
 
 	}
 	
 	public ProjectGrid(List<T> list){
-		map = new LinkedHashMap<Integer, Drivers>();
-		if(list instanceof Drivers){
-			for(T driver : list){
-				map.put(((Drivers) driver).getId(), (Drivers) driver);
-			}
+		map = new LinkedHashMap<Integer, T>();
+		for(T item : list){
+			map.put(0, item);
 		}
 		
 	}
-	
-	
-	public Map<Integer, Drivers> getDriversMap() {
-		return driversMap;
+
+	public Map<Integer, T> getItemsMap() {
+		return map;
 	}
 
-	public void setDriversMap(Map<Integer, Drivers> driversMap) {
-		this.driversMap = driversMap;
+	public void setItemsMap(Map<Integer, T> itemsMap) {
+		this.map = itemsMap;
 	}
+
+	public List<T> getItems() {
+		List<T> list = new ArrayList<T>();
+		for (T item : map.values()) {
+			list.add(item);
+		}
+		return list;
+	}
+	
 }

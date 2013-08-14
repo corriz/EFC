@@ -37,22 +37,21 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public void saveAll(ProjectGrid<?> driversGrid) {
+	public void saveAll(ProjectGrid<Cars> driversGrid) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void updateAll(ProjectGrid<?> driversGrid) {
+	public void updateAll(ProjectGrid<Cars> driversGrid) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public ProjectGrid<?> findAll() {
+	public ProjectGrid<Cars> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
 }
