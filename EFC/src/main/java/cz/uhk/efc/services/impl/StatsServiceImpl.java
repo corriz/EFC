@@ -1,55 +1,48 @@
-/**
- * 
- */
 package cz.uhk.efc.services.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cz.uhk.efc.factory.ProjectGrid;
-import cz.uhk.efc.model.Fuel;
-import cz.uhk.efc.services.FuelService;
+import cz.uhk.efc.model.Stats;
+import cz.uhk.efc.services.StatsService;
 
-/**
- * @author corri
- *
- */
 @Service
 @Transactional
-public class FuelServiceImpl implements FuelService {
+public class StatsServiceImpl implements StatsService {
 
 	@Override
-	public Fuel get(int id) {
+	public Stats get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void save(Fuel fuel) {
+	public void save(Stats stats) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(Fuel fuel) {
+	public void delete(Stats stats) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void saveAll(ProjectGrid<Fuel> fuelGrid) {
+	public void saveAll(ProjectGrid<Stats> statsGrid) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void updateAll(ProjectGrid<Fuel> fuelGrid) {
+	public void updateAll(ProjectGrid<Stats> statsGrid) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public ProjectGrid<Fuel> findAll() {
+	public ProjectGrid<Stats> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

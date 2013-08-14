@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import cz.uhk.efc.factory.IModelItem;
 /**
  *  Trida pro definici vozidla
  * @author corri

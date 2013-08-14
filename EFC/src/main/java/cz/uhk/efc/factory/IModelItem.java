@@ -1,4 +1,4 @@
-package cz.uhk.efc.model;
+package cz.uhk.efc.factory;
 
 public interface IModelItem {
 	

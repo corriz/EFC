@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import cz.uhk.efc.factory.IModelItem;
+
 /**
  * Trida predstavujici samotne cerpani
  * 
@@ -18,7 +20,7 @@ import javax.persistence.ManyToOne;
  * 
  */
 @Entity
-public class Refueling implements Serializable {
+public class Refueling implements IModelItem,  Serializable {
 
 	private static final long serialVersionUID = 4518351960899574550L;
 

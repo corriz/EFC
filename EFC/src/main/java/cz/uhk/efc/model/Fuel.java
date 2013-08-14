@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import cz.uhk.efc.factory.IModelItem;
+
 @Entity
 public class Fuel implements IModelItem, Serializable{
 	

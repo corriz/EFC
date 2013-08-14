@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import cz.uhk.efc.factory.IModelItem;
+
 /**
  * All driver
  * @author corri

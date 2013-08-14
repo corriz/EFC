@@ -19,26 +19,26 @@ public interface CarService {
 	
 	/**
 	 * Ulozi jednoho ridice
-	 * @param driversCommand
+	 * @param car
 	 */
 	void save(Cars car);
 	
 	/**
 	 * Jednoduche mazani ridice
-	 * @param driver
+	 * @param car
 	 */
 	void delete(Cars driver);
 	
 	
 	/**
 	 * Ulozi vsechny ridice
-	 * @param driversGrid
+	 * @param carGrid
 	 */
 	void saveAll(ProjectGrid<Cars> carsGrid);
 	
 	/**
 	 * Update all drivers
-	 * @param driversGrid
+	 * @param carGrid
 	 */
 	void updateAll(ProjectGrid<Cars> carsGrid);
 	

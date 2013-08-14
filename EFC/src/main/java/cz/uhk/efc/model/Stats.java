@@ -13,13 +13,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import cz.uhk.efc.factory.IModelItem;
+
 /**
  * @author corri
  * Statistiky za jedlotlive polozky
  *
  */
 @Entity
-public class Stats implements Serializable {
+public class Stats implements IModelItem,  Serializable {
 
 	private static final long serialVersionUID = 5526280713933211505L;
 	@Id

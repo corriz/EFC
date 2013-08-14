@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
-import cz.uhk.efc.model.IModelItem;
 
 /**
  * @author corri

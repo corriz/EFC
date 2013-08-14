@@ -5,7 +5,7 @@
 
 <h1>Přidat řidiče</h1>
 
-<form:form cssClass="uk-form" modelAttribute="driversCommand">
+<form:form cssClass="uk-form" modelAttribute="drivers">
 	<fieldset>
 		<legend>Formulář pro přidání řidiče</legend>
 		<div class="uk-form-row">

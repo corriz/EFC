@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import cz.uhk.efc.factory.IModelItem;
+
 
 /**
  * Registruje vsechny vydaje za auto jako je servis, vymena oleje, stk, opravy ap....
@@ -18,7 +20,7 @@ import javax.persistence.ManyToOne;
  *
  */
 @Entity
-public class Costs implements Serializable {
+public class Costs implements IModelItem,  Serializable {
 
 	private static final long serialVersionUID = 4834389339091409971L;
 	/**
