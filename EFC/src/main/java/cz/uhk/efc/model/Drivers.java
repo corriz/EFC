@@ -22,7 +22,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 
 @Entity
-public class Drivers implements Serializable {
+public class Drivers implements IModelItem, Serializable {
 	
 	private static final long serialVersionUID = -7206099558342858789L;
 

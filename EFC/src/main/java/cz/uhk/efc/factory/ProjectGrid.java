@@ -9,12 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
+import cz.uhk.efc.model.IModelItem;
 
 /**
  * @author corri
  *
  */
-public class ProjectGrid <T> {
+public class ProjectGrid <T extends IModelItem> {
 	
 	@Valid
 	private Map<Integer, T> map;
@@ -26,7 +27,7 @@ public class ProjectGrid <T> {
 	public ProjectGrid(List<T> list){
 		map = new LinkedHashMap<Integer, T>();
 		for(T item : list){
-			map.put(0, item);
+			map.put(item.getId(), item);
 		}
 		
 	}

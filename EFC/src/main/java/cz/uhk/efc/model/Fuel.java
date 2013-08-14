@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Fuel implements Serializable{
+public class Fuel implements IModelItem, Serializable{
 	
 	/**
 	 * 

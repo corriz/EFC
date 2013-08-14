@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Cars implements Serializable{
+public class Cars implements IModelItem, Serializable{
 
 	private static final long serialVersionUID = 3076061232294727883L;
 	/**
