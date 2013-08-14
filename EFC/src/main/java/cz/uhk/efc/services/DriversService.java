@@ -41,13 +41,13 @@ public interface DriversService {
 	 * Ulozi vsechny ridice
 	 * @param driversGrid
 	 */
-	void saveAll(ProjectGrid<?> driversGrid);
+	void saveAll(ProjectGrid<Drivers> driversGrid);
 	
 	/**
 	 * Update all drivers
 	 * @param driversGrid
 	 */
-	void updateAll(ProjectGrid<?> driversGrid);
+	void updateAll(ProjectGrid<Drivers> driversGrid);
 	
 	/**
 	 * Najdi vsechny

@@ -52,8 +52,8 @@ public class DriversServiceImpl implements DriversService {
 	 * @see cz.uhk.efc.services.DriversService#saveAll(cz.uhk.efc.factory.DriversGrid)
 	 */
 	@Override
-	public void saveAll(ProjectGrid<?> driversGrid) {
-		for(Drivers driver : driversGrid.getDrivers()){
+	public void saveAll(ProjectGrid<Drivers> driversGrid) {
+		for(Drivers driver : driversGrid.getItems()){
 			driversDao.save(driver);
 		}
 	}
@@ -62,10 +62,10 @@ public class DriversServiceImpl implements DriversService {
 	 * @see cz.uhk.efc.services.DriversService#updateAll(cz.uhk.efc.factory.DriversGrid)
 	 */
 	@Override
-	public void updateAll(ProjectGrid<?> driversGrid) {
+	public void updateAll(ProjectGrid<Drivers> driversGrid) {
 		ProjectGrid<Drivers> allDrivers = findAll();
-		allDrivers.getDriversMap().putAll(driversGrid.getDriversMap());
-		driversGrid.setDriversMap(allDrivers.getDriversMap());
+		allDrivers.getItemsMap().putAll(driversGrid.getItemsMap());
+		driversGrid.setItemsMap(allDrivers.getItemsMap());
 	}
 
 	@Override

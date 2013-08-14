@@ -18,6 +18,41 @@ import cz.uhk.efc.model.Drivers;
 public class ProjectGrid <T> {
 	
 	@Valid
+	private Map<Integer, T> map;
+	
+	public ProjectGrid() {
+
+	}
+	
+	public ProjectGrid(List<T> list){
+		map = new LinkedHashMap<Integer, T>();
+		for(T item : list){
+			map.put(0, item);
+		}
+		
+	}
+
+	public Map<Integer, T> getItemsMap() {
+		return map;
+	}
+
+	public void setItemsMap(Map<Integer, T> itemsMap) {
+		this.map = itemsMap;
+	}
+
+	public List<T> getItems() {
+		List<T> list = new ArrayList<T>();
+		for (T item : map.values()) {
+			list.add(item);
+		}
+		return list;
+	}
+	
+}
+/*
+public class ProjectGrid <T> {
+	
+	@Valid
 	private Map<Integer, DriversCommand> map;
 	
 	public ProjectGrid() {
@@ -52,4 +87,4 @@ public class ProjectGrid <T> {
 		return drivers;
 	}
 	
-}
+}*/

@@ -6,7 +6,7 @@
 <h1>Seznam řidičů</h1>
 
 <c:choose>
-<c:when test="${not empty drivers.driversMap}">
+<c:when test="${not empty drivers.itemsMap}">
 <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
 <thead>
 	<tr>
@@ -18,7 +18,7 @@
 	</tr>
 </thead>
 <tbody>
-	<c:forEach items="${drivers.driversMap}" var="driverEntry">
+	<c:forEach items="${drivers.itemsMap}" var="driverEntry">
 	<c:set var="driver" value="${driverEntry.value}"/>
 	<c:set var="driverId" value="${driverEntry.key}"/>
 		<tr>
