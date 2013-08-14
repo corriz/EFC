@@ -6,7 +6,6 @@ package cz.uhk.efc.services.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cz.uhk.efc.factory.DriversCommand;
 import cz.uhk.efc.factory.ProjectGrid;
 import cz.uhk.efc.model.Cars;
 import cz.uhk.efc.services.CarService;
@@ -26,13 +25,13 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public void save(DriversCommand driversCommand) {
+	public void save(Cars car) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(Cars driver) {
+	public void delete(Cars car) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -50,9 +49,10 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public ProjectGrid<Cars> findAll() {
+	public ProjectGrid<?> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

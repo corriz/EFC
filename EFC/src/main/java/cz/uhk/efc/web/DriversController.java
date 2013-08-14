@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import cz.uhk.efc.factory.DriversCommand;
+import cz.uhk.efc.model.Drivers;
 import cz.uhk.efc.services.DriversService;
 
 /**
@@ -58,21 +58,21 @@ public class DriversController {
 	} 
 	
 	@RequestMapping(value="drivers/add/", method = RequestMethod.GET)
-	public void renderAdd(Model model, @ModelAttribute DriversCommand driversCommand,@RequestParam(required=false) Integer id){
+	public void renderAdd(Model model, @ModelAttribute Drivers drivers,@RequestParam(required=false) Integer id){
 		
 	}
 	
 	@RequestMapping(value="drivers/add/", method = RequestMethod.POST)
-	public String submitAdd(@Valid DriversCommand driverCommand, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+	public String submitAdd(@Valid Drivers driver, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
 		logger.info("Additing new Driver in database");
 		if(result.hasErrors()){
 			logger.info("Here is Error while additing to DB");
 			return null;
 		}
-		logger.info("We additing this:" + driverCommand);
-		driverCommand.setOwn_number(UUID.randomUUID().toString());
-		driversService.save(driverCommand);
-		redirectAttributes.addFlashAttribute("message", "Řidič "+ driverCommand.getLastname() +" přidán");
+		logger.info("We additing this:" + driver);
+		driver.setOwn_number(UUID.randomUUID().toString());
+		driversService.save(driver);
+		redirectAttributes.addFlashAttribute("message", "Řidič "+ driver.getLastname() +" přidán");
 		return "redirect:/drivers/";
 	} 
 	

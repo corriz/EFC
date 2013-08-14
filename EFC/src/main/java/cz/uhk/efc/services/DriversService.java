@@ -28,7 +28,7 @@ public interface DriversService {
 	 * Ulozi jednoho ridice
 	 * @param driversCommand
 	 */
-	void save(DriversCommand driversCommand);
+	void save(Drivers drivers);
 	
 	/**
 	 * Jednoduche mazani ridice

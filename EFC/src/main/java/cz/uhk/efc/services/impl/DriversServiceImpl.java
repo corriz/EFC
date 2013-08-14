@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cz.uhk.efc.dao.DriversDao;
-import cz.uhk.efc.factory.DriversCommand;
 import cz.uhk.efc.factory.ProjectGrid;
 import cz.uhk.efc.model.Drivers;
 import cz.uhk.efc.services.DriversService;
@@ -36,8 +35,8 @@ public class DriversServiceImpl implements DriversService {
 	 * @see cz.uhk.efc.services.DriversService#save(cz.uhk.efc.factory.DriversCommand)
 	 */
 	@Override
-	public void save(DriversCommand driversCommand) {
-		driversDao.save(driversCommand.toDriver());
+	public void save(Drivers drivers) {
+		driversDao.save(drivers);
 	}
 
 	/* (non-Javadoc)
@@ -53,7 +52,7 @@ public class DriversServiceImpl implements DriversService {
 	 */
 	@Override
 	public void saveAll(ProjectGrid<?> driversGrid) {
-		for(Drivers driver : driversGrid.getDrivers()){
+		for(Drivers driver : driversGrid){
 			driversDao.save(driver);
 		}
 	}
