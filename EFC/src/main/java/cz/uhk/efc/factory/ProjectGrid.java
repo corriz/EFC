@@ -9,42 +9,44 @@ import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
-
 import cz.uhk.efc.model.Drivers;
 
 /**
  * @author corri
  *
  */
-public class DriversGrid {
+public class ProjectGrid <T> {
 	
 	@Valid
-	private Map<Integer, DriversCommand> driversMap;
+	private Map<Integer, DriversCommand> map;
 	
-	public DriversGrid() {
+	public ProjectGrid() {
 
 	}
 	
-	public DriversGrid(List<Drivers> driversList){
-		driversMap = new LinkedHashMap<Integer, DriversCommand>();
-		for(Drivers driver : driversList){
-			driversMap.put(driver.getId(), new DriversCommand(driver));
+	public ProjectGrid(List<T> list){
+		map = new LinkedHashMap<Integer, DriversCommand>();
+		if(list instanceof DriversCommand){
+			for(T driver : list){
+				map.put(((Drivers) driver).getId(), new DriversCommand((Drivers) driver));
+			}
 		}
+		
 	}
 	
 	
 
 	public Map<Integer, DriversCommand> getDriversMap() {
-		return driversMap;
+		return map;
 	}
 
 	public void setDriversMap(Map<Integer, DriversCommand> driversMap) {
-		this.driversMap = driversMap;
+		this.map = driversMap;
 	}
 
 	public List<Drivers> getDrivers() {
 		List<Drivers> drivers = new ArrayList<Drivers>();
-		for (DriversCommand driversCommand : driversMap.values()) {
+		for (DriversCommand driversCommand : map.values()) {
 			drivers.add(driversCommand.toDriver());
 		}
 		return drivers;

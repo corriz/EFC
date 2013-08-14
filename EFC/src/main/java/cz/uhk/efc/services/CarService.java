@@ -5,24 +5,18 @@ package cz.uhk.efc.services;
 
 import cz.uhk.efc.factory.DriversCommand;
 import cz.uhk.efc.factory.ProjectGrid;
-import cz.uhk.efc.model.Drivers;
-
+import cz.uhk.efc.model.Cars;
 /**
  * @author corri
  *
  */
-/**
- * @author corri
- *
- */
-public interface DriversService {
-	
+public interface CarService {
 	/**
 	 * Vybere jednoho ridice
 	 * @param id
 	 * @return
 	 */
-	Drivers get(int id); 
+	Cars get(int id); 
 	
 	/**
 	 * Ulozi jednoho ridice
@@ -34,7 +28,7 @@ public interface DriversService {
 	 * Jednoduche mazani ridice
 	 * @param driver
 	 */
-	void delete(Drivers driver);
+	void delete(Cars driver);
 	
 	
 	/**
@@ -53,5 +47,5 @@ public interface DriversService {
 	 * Najdi vsechny
 	 * @return
 	 */
-	ProjectGrid<Drivers> findAll();
+	ProjectGrid<?> findAll();
 }

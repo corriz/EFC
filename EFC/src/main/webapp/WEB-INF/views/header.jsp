@@ -42,7 +42,7 @@
 					    <li><a href="<spring:url value="/drivers/add/" />">Přidat</a></li>
 					    
 					    <li class="uk-nav-header"><i class="uk-icon-cog"></i> Nastavení</li>
-					    <li><a href="<spring:url value="/" />">Přehled</a></li>
+					    <li><a href="<spring:url value="/settings" />">Přehled</a></li>
 					</ul>
 			    </aside>
 			    <div class="my-main uk-width-medium-3-4">

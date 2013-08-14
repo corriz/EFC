@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cz.uhk.efc.factory.DriversCommand;
-import cz.uhk.efc.model.Drivers;
 import cz.uhk.efc.services.DriversService;
 
 /**
@@ -35,15 +34,22 @@ public class DriversController {
 	@Autowired
 	private DriversService driversService;
 	
-	//TODO dodelat přehled 
 	@RequestMapping("drivers/")
 	public String renderOverView(Model model) {
 		logger.info("Show complet overview for Drivers");
 		model.addAttribute("drivers", driversService.findAll());
 		return "drivers/default";
-	} 
+	}
 	
-	//TODO dodelat zobrazeni tabulky ridicu
+	@RequestMapping(value = "drivers/list/remove", method = RequestMethod.GET)
+	public String remove(@RequestParam(value = "id", required = false) Integer id, Model m) {
+		if(id != null){
+			driversService.delete(driversService.get(id));;
+			return "redirect:/drivers/list/";
+		}
+		return "redirect:/drivers/list/";
+	}
+	
 	@RequestMapping(value="drivers/list/", method= RequestMethod.GET )
 	public String renderList(Model model) {
 		logger.info("Show all Drivers in database");

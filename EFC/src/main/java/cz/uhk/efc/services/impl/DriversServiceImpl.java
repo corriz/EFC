@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cz.uhk.efc.dao.DriversDao;
 import cz.uhk.efc.factory.DriversCommand;
-import cz.uhk.efc.factory.DriversGrid;
+import cz.uhk.efc.factory.ProjectGrid;
 import cz.uhk.efc.model.Drivers;
 import cz.uhk.efc.services.DriversService;
 
@@ -52,7 +52,7 @@ public class DriversServiceImpl implements DriversService {
 	 * @see cz.uhk.efc.services.DriversService#saveAll(cz.uhk.efc.factory.DriversGrid)
 	 */
 	@Override
-	public void saveAll(DriversGrid driversGrid) {
+	public void saveAll(ProjectGrid<?> driversGrid) {
 		for(Drivers driver : driversGrid.getDrivers()){
 			driversDao.save(driver);
 		}
@@ -62,15 +62,15 @@ public class DriversServiceImpl implements DriversService {
 	 * @see cz.uhk.efc.services.DriversService#updateAll(cz.uhk.efc.factory.DriversGrid)
 	 */
 	@Override
-	public void updateAll(DriversGrid driversGrid) {
-		DriversGrid allDrivers = findAll();
+	public void updateAll(ProjectGrid<?> driversGrid) {
+		ProjectGrid<Drivers> allDrivers = findAll();
 		allDrivers.getDriversMap().putAll(driversGrid.getDriversMap());
 		driversGrid.setDriversMap(allDrivers.getDriversMap());
 	}
 
 	@Override
-	public DriversGrid findAll() {
-		return new DriversGrid(driversDao.findAll());
+	public ProjectGrid<Drivers> findAll() {
+		return new ProjectGrid<Drivers>(driversDao.findAll());
 	}
 
 }

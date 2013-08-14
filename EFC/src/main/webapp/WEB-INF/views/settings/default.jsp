@@ -3,6 +3,11 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
 
-<h1>Přehled pro automobily</h1>
+<h1>Nastavení aplikace</h1>
+<c:if test="${not empty message}">
+	<div class="uk-alert uk-alert-success"  data-uk-alert>
+		<p>${message}</p>
+	</div>
+</c:if>
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>
