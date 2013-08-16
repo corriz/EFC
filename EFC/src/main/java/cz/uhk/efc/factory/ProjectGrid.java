@@ -16,6 +16,7 @@ import javax.validation.Valid;
  */
 public class ProjectGrid <T extends IModelItem> {
 	
+	
 	@Valid
 	private Map<Integer, T> map;
 	
