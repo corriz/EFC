@@ -6,8 +6,9 @@ package cz.uhk.efc.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cz.uhk.efc.common.AbstractService;
+import cz.uhk.efc.common.IOperations;
 import cz.uhk.efc.dao.FuelDao;
-import cz.uhk.efc.dao.IOperations;
 import cz.uhk.efc.factory.ProjectGrid;
 import cz.uhk.efc.model.Fuel;
 import cz.uhk.efc.services.FuelService;

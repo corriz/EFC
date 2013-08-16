@@ -3,9 +3,12 @@
  */
 package cz.uhk.efc.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import cz.uhk.efc.common.AbstractService;
+import cz.uhk.efc.common.IOperations;
+import cz.uhk.efc.dao.CarsDao;
 import cz.uhk.efc.factory.ProjectGrid;
 import cz.uhk.efc.model.Cars;
 import cz.uhk.efc.services.CarService;
@@ -15,43 +18,21 @@ import cz.uhk.efc.services.CarService;
  *
  */
 @Service
-@Transactional
-public class CarServiceImpl implements CarService {
+public class CarServiceImpl extends AbstractService<Cars> implements CarService {
 
-	@Override
-	public Cars get(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void save(Cars car) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Cars car) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void saveAll(ProjectGrid<Cars> driversGrid) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateAll(ProjectGrid<Cars> driversGrid) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	@Autowired
+	private CarsDao carsDao;
+	
 	@Override
 	public ProjectGrid<Cars> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ProjectGrid<Cars>(getDao().takeAll());
 	}
+
+	@Override
+	protected IOperations<Cars> getDao() {
+		return carsDao;
+	}
+
+	
 
 }

@@ -1,4 +1,4 @@
-package cz.uhk.efc.dao;
+package cz.uhk.efc.common;
 
 import java.io.Serializable;
 import java.util.List;

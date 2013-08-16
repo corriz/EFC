@@ -3,17 +3,13 @@
  */
 package cz.uhk.efc.dao;
 
-import java.util.List;
-
+import cz.uhk.efc.common.IOperations;
 import cz.uhk.efc.model.Costs;
 
 /**
  * @author corri
  *
  */
-public interface CostsDao {
-	Costs get(int id);
-	void save(Costs cost);
-	void delete(Costs cost);
-	List<Costs> findAll();
+public interface CostsDao extends IOperations<Costs> {
+	
 }

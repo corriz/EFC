@@ -1,14 +1,12 @@
 /**
  * 
  */
-package cz.uhk.efc.services.impl;
+package cz.uhk.efc.common;
 
 import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
-
-import cz.uhk.efc.dao.IOperations;
 
 
 /**

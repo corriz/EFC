@@ -1,7 +1,6 @@
 package cz.uhk.efc.dao;
 
-import java.util.List;
-
+import cz.uhk.efc.common.IOperations;
 import cz.uhk.efc.model.Stats;
 
 /**
@@ -13,27 +12,6 @@ import cz.uhk.efc.model.Stats;
  *
  *
  */
-public interface StatsDao {
+public interface StatsDao extends IOperations<Stats>{
 
-	/**
-	 * Vybere jednu konkretni statistiku podle ID
-	 * @param id
-	 * @return Stats
-	 */
-	Stats get(int id);
-	/**
-	 * Ulozi jeden zaznam do databaze statistik
-	 * @param stat
-	 */
-	void save(Stats stat);
-	/**
-	 * Vymaze jeden zaznam z databaze
-	 * @param stat
-	 */
-	void delete(Stats stat);
-	/**
-	 * Vybere vsechny statistiky z DB
-	 * @return List<Stats>
-	 */
-	List<Stats> findAll();
 }

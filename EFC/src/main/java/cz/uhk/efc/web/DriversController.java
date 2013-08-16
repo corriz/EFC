@@ -44,7 +44,7 @@ public class DriversController {
 	@RequestMapping(value = "drivers/list/remove", method = RequestMethod.GET)
 	public String remove(@RequestParam(value = "id", required = false) Integer id, Model m) {
 		if(id != null){
-			driversService.delete(driversService.get(id));;
+			driversService.deleteById(id);
 			return "redirect:/drivers/list/";
 		}
 		return "redirect:/drivers/list/";
@@ -71,7 +71,7 @@ public class DriversController {
 		}
 		logger.info("We additing this:" + driver);
 		driver.setOwn_number(UUID.randomUUID().toString());
-		driversService.save(driver);
+		driversService.create(driver);
 		redirectAttributes.addFlashAttribute("message", "Řidič "+ driver.getLastname() +" přidán");
 		return "redirect:/drivers/";
 	} 

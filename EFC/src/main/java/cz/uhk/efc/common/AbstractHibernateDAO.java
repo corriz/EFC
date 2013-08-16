@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cz.uhk.efc.dao.impl;
+package cz.uhk.efc.common;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,8 +11,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.base.Preconditions;
-
-import cz.uhk.efc.dao.IOperations;
 
 /**
  * Tato trida reprezentuje zakladni operace nad tabulkami.
