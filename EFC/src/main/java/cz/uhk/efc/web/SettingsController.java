@@ -13,13 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.google.common.base.Preconditions;
 
 import cz.uhk.efc.model.Cars;
 import cz.uhk.efc.model.Fuel;
@@ -55,6 +55,10 @@ public class SettingsController {
 		return URL + "/default";
 	}
 	
+	/**
+	 * Fuel methods
+	 * */
+	
 	@RequestMapping(value="/add-fuel", method = RequestMethod.GET)
 	public void initFuelForm(Model model,@ModelAttribute (value = "fuel") Fuel fuel, @RequestParam(required=false) Integer id){
 		
@@ -74,6 +78,19 @@ public class SettingsController {
 			return "redirect:" + URL;
 	}
 	
+	@RequestMapping(value = "/fuel-remove", method = RequestMethod.GET)
+	public String removeFuel(@RequestParam(value = "id", required = false) Integer id, Model m) {
+		if(id != null){
+			fuelService.deleteById(id);
+			return "redirect:" + URL;
+		}
+		return "redirect:" + URL;
+	}
+	
+	/**
+	 * CAR values and methods
+	 * */
+	
 	@RequestMapping(value="/add-car", method = RequestMethod.GET)
 	public void initCarForm(Model model,@ModelAttribute (value = "car") Cars car, @RequestParam(required=false) Integer id){
 		model.addAttribute("fuels", fuelService.findAll());
@@ -85,17 +102,35 @@ public class SettingsController {
 		logger.info("Add new Car: " + car.getModel());
 		car.setDriver(driversService.findOne(car.getDriver().getId()));
 		car.setFuel(fuelService.findOne(car.getFuel().getId()));
-		/*if(result.hasErrors()){
-			logger.info("Additing crash!!!");
-			redirectAttributes.addFlashAttribute("message","Něco se stalo při ukládání, zkontroluj log.");
-			return "redirect:" + URL;
-		}*/
 		
-		logger.info("Additing new:" + car.getDriver());
-		logger.info("Additing new:" + car.getFuel());
-		//car.setDriver(car.getDriver());
 		carService.create(car);
 		redirectAttributes.addFlashAttribute("message", "Nový automobil: "+ car.getMade() +" Model: "+ car.getModel() + " úspěšně vložen do databáze.");		
+		return "redirect:" + URL;
+	}
+	
+	@RequestMapping(value="/{carId}/edit-car", method= RequestMethod.GET)
+	public String editCar(@PathVariable("carId") int carId,Model model){
+		logger.info("Take attribute " + carId);
+		model.addAttribute("car", carService.findOne(carId));
+		return URL + "/add-car";
+	}
+	
+	@RequestMapping(value = "/{carId}/edit-car", method = RequestMethod.PUT)
+    public String processUpdateOwnerForm(@Valid Cars car, BindingResult result, SessionStatus status) {
+        if (result.hasErrors()) {
+            return "redirect:" + URL + "/add-car";
+        } else {
+            carService.update(car);
+            return "redirect:" + URL;
+        }
+    }
+	
+	@RequestMapping(value = "/car-remove", method = RequestMethod.GET)
+	public String removeCar(@RequestParam(value = "id", required = false) Integer id, Model m) {
+		if(id != null){
+			carService.deleteById(id);
+			return "redirect:" + URL;
+		}
 		return "redirect:" + URL;
 	}
 }
