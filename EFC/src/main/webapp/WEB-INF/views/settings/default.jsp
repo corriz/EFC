@@ -64,7 +64,7 @@
 				<tr>
 					<td>${fuel.name}</td>
 					<td>${fuel.unit}</td>
-					<td><a href="">Smazat</a></td>
+					<td><a href="" class="uk-button-mini uk-button-danger"><i class="uk-icon-remove"></i></a></td>
 				</tr>
 				</c:forEach>
 			</tbody>

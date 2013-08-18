@@ -9,11 +9,13 @@
 	<fieldset>
 	<legend>Formulář pro přidání paliva</legend>
 		
-		<c:if test="${not empty drivers}">
+		<c:if test="${not empty drivers.itemsMap}">
 			<div class="uk-form-row">
-				<form:select path="driver" cssClass="uk-form-width-medium">
-					<c:forEach items="${drivers}" var="driver">
-						<form:option value="${driver.id}" label="${driver.firstname} ${driver.lastname}"  />
+				<form:select path="driver.id" cssClass="uk-form-width-medium">
+					<c:forEach items="${drivers.itemsMap}" var="driverEntry">
+						<c:set var="driverId" value="${driverEntry.key}"/>
+						<c:set var="driver" value="${driverEntry.value}"/>
+						<form:option value="${driverId}">${driver.firstname} ${driver.lastname} </form:option>
 					</c:forEach>
 				</form:select>
 			</div>
@@ -31,11 +33,11 @@
 		
 		<c:if test="${not empty fuels.itemsMap}">
 			<div class="uk-form-row">
-				<form:select path="fuel" cssClass="uk-form-width-medium">
+				<form:select path="fuel.id" cssClass="uk-form-width-medium">
 					<c:forEach items="${fuels.itemsMap}" var="fuelEntry">
 						<c:set var="fuelId" value="${fuelEntry.key}"/>
 						<c:set var="fuel" value="${fuelEntry.value}"/>
-						<form:option value="${fuelEntry}">${fuel.name}</form:option>
+						<form:option value="${fuelId}">${fuel.name}</form:option>
 					</c:forEach>
 				</form:select>
 			</div>

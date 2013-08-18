@@ -77,12 +77,14 @@ public class SettingsController {
 	@RequestMapping(value="/add-car", method = RequestMethod.GET)
 	public void initCarForm(Model model,@ModelAttribute (value = "car") Cars car, @RequestParam(required=false) Integer id){
 		model.addAttribute("fuels", fuelService.findAll());
-		model.addAttribute("drivers", driversService.takeAll());
+		model.addAttribute("drivers", driversService.findAll());
 	}
 	
 	@RequestMapping(value="/add-car", method = RequestMethod.POST)
-	public String submitCar(@Valid Cars car,BindingResult result, Model model, RedirectAttributes redirectAttributes){
+	public String submitCar(@Valid Cars car, BindingResult result, Model model, RedirectAttributes redirectAttributes){
 		logger.info("Add new Car: " + car.getModel());
+		car.setDriver(driversService.findOne(car.getDriver().getId()));
+		car.setFuel(fuelService.findOne(car.getFuel().getId()));
 		/*if(result.hasErrors()){
 			logger.info("Additing crash!!!");
 			redirectAttributes.addFlashAttribute("message","Něco se stalo při ukládání, zkontroluj log.");
@@ -90,7 +92,8 @@ public class SettingsController {
 		}*/
 		
 		logger.info("Additing new:" + car.getDriver());
-		car.setDriver(car.getDriver());
+		logger.info("Additing new:" + car.getFuel());
+		//car.setDriver(car.getDriver());
 		carService.create(car);
 		redirectAttributes.addFlashAttribute("message", "Nový automobil: "+ car.getMade() +" Model: "+ car.getModel() + " úspěšně vložen do databáze.");		
 		return "redirect:" + URL;
