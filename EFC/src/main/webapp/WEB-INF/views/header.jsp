@@ -27,9 +27,9 @@
 	    		<aside class="my-sidebar uk-width-medium-1-4 uk-hidden-small">
 					<ul class="tm-nav uk-nav" data-uk-nav>
 					    <li class="uk-nav-header"><i class="uk-icon-road"></i> Čerpání</li>
-					    <li><a href="<spring:url value="/" />">Přehled</a></li>
-					    <li><a href="<spring:url value="/" />">Seznam</a></li>
-					    <li><a href="<spring:url value="/" />">Přidat</a></li>
+					    <li><a href="<spring:url value="/refueling/" />">Přehled</a></li>
+					    <li><a href="<spring:url value="/refueling/list" />">Seznam</a></li>
+					    <li><a href="<spring:url value="/refueling/add" />">Přidat</a></li>
 					    		
 					    <li class="uk-nav-header"><i class="uk-icon-gears"></i> Další výdaje</li>
 					    <li><a href="<spring:url value="/costs" />">Přehled</a></li>
