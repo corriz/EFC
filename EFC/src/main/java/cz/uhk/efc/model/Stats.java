@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -36,10 +37,10 @@ public class Stats implements IModelItem,  Serializable {
 	 */
 	private double kilometers;
 	
-	@OneToMany(mappedBy = "stat")
+	@OneToMany(mappedBy = "stat", cascade=CascadeType.ALL)
 	private List<Costs> costs = new ArrayList<Costs>();
 	
-	@OneToMany(mappedBy = "stat")
+	@OneToMany(mappedBy = "stat", cascade=CascadeType.ALL)
 	private List<Refueling> refuelings = new ArrayList<Refueling>();
 	/**
 	 * Cena

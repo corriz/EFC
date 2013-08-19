@@ -83,5 +83,19 @@ public class Costs implements IModelItem,  Serializable {
 		this.text = text;
 	}
 	
-	
+	public Stats getStat() {
+		return stat;
+	}
+
+	public void setStat(Stats stat) {
+		this.stat = stat;
+	}
+
+	public Cars getCar() {
+		return car;
+	}
+
+	public void setCar(Cars car) {
+		this.car = car;
+	}
 }
