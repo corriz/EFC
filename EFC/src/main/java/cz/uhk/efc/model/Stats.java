@@ -10,9 +10,12 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 import cz.uhk.efc.factory.IModelItem;
 
@@ -37,10 +40,11 @@ public class Stats implements IModelItem,  Serializable {
 	 */
 	private double kilometers;
 	
-	@OneToMany(mappedBy = "stat", cascade=CascadeType.ALL)
-	private List<Costs> costs = new ArrayList<Costs>();
+	@OneToOne(mappedBy = "stat")
+	@PrimaryKeyJoinColumn
+	private Costs costs;
 	
-	@OneToMany(mappedBy = "stat", cascade=CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "stat")
 	private List<Refueling> refuelings = new ArrayList<Refueling>();
 	/**
 	 * Cena
@@ -104,18 +108,19 @@ public class Stats implements IModelItem,  Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public List<Costs> getCosts() {
-		return costs;
-	}
-	public void setCosts(List<Costs> costs) {
-		this.costs = costs;
-	}
+	
 	public List<Refueling> getRefuelings() {
 		return refuelings;
 	}
+	
 	public void setRefuelings(List<Refueling> refuelings) {
 		this.refuelings = refuelings;
 	}
 	
-	
+	public Costs getCosts() {
+		return costs;
+	}
+	public void setCosts(Costs costs) {
+		this.costs = costs;
+	}
 }
