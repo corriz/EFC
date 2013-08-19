@@ -52,5 +52,15 @@
 		<filter-name>etagFilter</filter-name>
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
 	</filter-mapping>
+	
+	<filter>
+        <filter-name>httpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>httpMethodFilter</filter-name>
+        <servlet-name>spring-mvc</servlet-name>
+    </filter-mapping>
 
 </web-app>

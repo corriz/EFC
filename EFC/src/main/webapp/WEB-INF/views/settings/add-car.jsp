@@ -3,12 +3,17 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
 
-<h1>Přidat automobil</h1>
+<h1><c:if test="${not empty car.model}">Editovat </c:if> Automobil</h1>
 
-<form:form class="uk-form" commandName="car">
+<c:choose>
+	<c:when test="${not empty car.model}"><c:set var="method" value="put"></c:set></c:when>
+	<c:otherwise><c:set var="method" value="post"></c:set></c:otherwise>
+</c:choose>
+
+<form:form class="uk-form" commandName="car" method="${method}">
 	<fieldset>
 	<legend>Formulář pro přidání paliva</legend>
-		
+		<c:if test="${not empty car.id}"><form:hidden path="id"/></c:if>
 		<c:if test="${not empty drivers.itemsMap}">
 			<div class="uk-form-row">
 				<form:select path="driver.id" cssClass="uk-form-width-medium">

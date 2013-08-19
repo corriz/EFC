@@ -32,9 +32,9 @@
 					    <li><a href="<spring:url value="/" />">Přidat</a></li>
 					    		
 					    <li class="uk-nav-header"><i class="uk-icon-gears"></i> Další výdaje</li>
-					    <li><a href="<spring:url value="/" />">Přehled</a></li>
-					    <li><a href="<spring:url value="/" />">Seznam</a></li>
-					    <li><a href="<spring:url value="/" />">Přidat</a></li>
+					    <li><a href="<spring:url value="/costs" />">Přehled</a></li>
+					    <li><a href="<spring:url value="/costs/list" />">Seznam</a></li>
+					    <li><a href="<spring:url value="/costs/add" />">Přidat</a></li>
 		
 					    <li class="uk-nav-header"><i class="uk-icon-group"></i> Řidiči</li>
 					    <li><a href="<spring:url value="/drivers/" />">Přehled</a></li>

@@ -111,18 +111,17 @@ public class SettingsController {
 	@RequestMapping(value="/{carId}/edit-car", method= RequestMethod.GET)
 	public String editCar(@PathVariable("carId") int carId,Model model){
 		logger.info("Take attribute " + carId);
+		model.addAttribute("fuels", fuelService.findAll());
+		model.addAttribute("drivers", driversService.findAll());
 		model.addAttribute("car", carService.findOne(carId));
 		return URL + "/add-car";
 	}
 	
 	@RequestMapping(value = "/{carId}/edit-car", method = RequestMethod.PUT)
     public String processUpdateOwnerForm(@Valid Cars car, BindingResult result, SessionStatus status) {
-        if (result.hasErrors()) {
-            return "redirect:" + URL + "/add-car";
-        } else {
+			logger.info("We editing" + car.getId());
             carService.update(car);
             return "redirect:" + URL;
-        }
     }
 	
 	@RequestMapping(value = "/car-remove", method = RequestMethod.GET)

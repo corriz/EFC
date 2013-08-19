@@ -57,7 +57,7 @@
 			</table>
 		</c:when>
 		<c:otherwise>
-			<div class="uk-alert-warning uk-close" data-uk-alert>
+			<div class="uk-alert-warning">
 				<p>Nejsou zde žádné automobily</p>
 			</div>
 		</c:otherwise>
