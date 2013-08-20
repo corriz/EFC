@@ -14,17 +14,19 @@
 	<fieldset>
 	<legend>Formulář pro přidání paliva</legend>
 		<c:if test="${not empty car.id}"><form:hidden path="id"/></c:if>
-		<c:if test="${not empty drivers.itemsMap}">
-			<div class="uk-form-row">
-				<form:select path="driver.id" cssClass="uk-form-width-medium">
-					<c:forEach items="${drivers.itemsMap}" var="driverEntry">
-						<c:set var="driverId" value="${driverEntry.key}"/>
-						<c:set var="driver" value="${driverEntry.value}"/>
-						<form:option value="${driverId}">${driver.firstname} ${driver.lastname} </form:option>
-					</c:forEach>
-				</form:select>
+		
+		<div class="uk-form-row">
+		<label for="firstname" class="uk-form-stacked">Majitel</label>
+			<div class="uk-form-controls">
+			<form:select path="driver.id" cssClass="uk-form-width-medium">
+				<c:forEach items="${drivers.itemsMap}" var="driverEntry">
+					<c:set var="driverId" value="${driverEntry.key}"/>
+					<c:set var="driver" value="${driverEntry.value}"/>
+					<form:option value="${driverId}">${driver.firstname} ${driver.lastname} </form:option>
+				</c:forEach>
+			</form:select>
 			</div>
-		</c:if>
+		</div>		
 		
 		<div class="uk-form-row">
 			<label for="firstname" class="uk-form-stacked">SPZ</label>
@@ -44,20 +46,6 @@
 				<form:input path="model" type="text" placeholder="Model" cssClass="uk-form-width-medium" />
 			</div>
 		</div>
-		
-		
-			<div class="uk-form-row">
-			<label for="firstname" class="uk-form-stacked">Majitel</label>
-			<div class="uk-form-controls">
-				<form:select path="driver.id" cssClass="uk-form-width-medium">
-					<c:forEach items="${drivers.itemsMap}" var="driverEntry">
-						<c:set var="driverId" value="${driverEntry.key}"/>
-						<c:set var="driver" value="${driverEntry.value}"/>
-						<form:option value="${fuelId}">${driver.name}</form:option>
-					</c:forEach>
-				</form:select>
-				</div>
-			</div>
 		
 		
 		
