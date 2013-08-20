@@ -48,7 +48,10 @@ public class CostsController {
 	 * **/
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String initView(@ModelAttribute Costs cost, Model model){
+	public String initView(Model model){
+		
+		model.addAttribute("costs", costsService.findAll());
+		
 		return URL + "/default";
 	}
 	
