@@ -21,15 +21,15 @@
 		    <li><a href="<spring:url value="/" />"><i class="uk-icon-home"></i> Domů</a></li>
 		    <li class="uk-parent"><a href="#"><i class="uk-icon-folder-road"></i> Čerpání</a>
 			<ul class="uk-nav-sub">
-			    <li><a href="<spring:url value="/" />">Přehled</a></li>
-				<li><a href="<spring:url value="/" />">Seznam</a></li>
-				<li><a href="<spring:url value="/" />">Přidat</a></li>
+			    <li><a href="<spring:url value="/refueling" />">Přehled</a></li>
+				<li><a href="<spring:url value="/refueling/list" />">Seznam</a></li>
+				<li><a href="<spring:url value="/refueling" />">Přidat</a></li>
 			</ul>
 			<li class="uk-parent"><a href="#"><i class="uk-icon-folder-gears"></i> Další výdaje</a>
 			<ul class="uk-nav-sub">
-			    <li><a href="<spring:url value="/" />">Přehled</a></li>
-				<li><a href="<spring:url value="/" />">Seznam</a></li>
-				<li><a href="<spring:url value="/" />">Přidat</a></li>
+			    <li><a href="<spring:url value="/costs" />">Přehled</a></li>
+				<li><a href="<spring:url value="/costs/list" />">Seznam</a></li>
+				<li><a href="<spring:url value="/costs/add" />">Přidat</a></li>
 			</ul>
 		    </li>
 		    <li class="uk-parent"><a href="#"><i class="uk-icon-group"></i> Řidiči</a>

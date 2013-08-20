@@ -12,7 +12,7 @@
 	<nav class="tm-navbar uk-navbar uk-navbar-attached">
 	    <div class="uk-container uk-containter-center">
 		<a class="uk-navbar-brand uk-hidden-small" href="<spring:url value="/" />">
-		    My UIKIT template
+		    PPRO Projekt 2012
 		</a>
 		<ul class="uk-navbar-nav uk-hidden-small">
 		    <li><a href="<spring:url value="/" />">Domů</a></li>
