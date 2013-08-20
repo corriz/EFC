@@ -105,7 +105,10 @@ public class CostsController {
 	}
 	
 	@RequestMapping(value = "/{costId}/edit", method = RequestMethod.PUT)
-    public String processUpdateCosts(@Valid Costs cost, BindingResult result) {
+    public String processUpdateCosts(@Valid Costs cost, BindingResult result,
+    		@PathVariable("costId") int costId) {
+			Costs updateCost = costsService.findOne(costId);
+			cost.getStat().setDate(updateCost.getStat().getDate());
             costsService.update(cost);
             return "redirect:" + URL;
     }
