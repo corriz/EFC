@@ -6,8 +6,8 @@
 <h1>Přidat čerpání <c:if test="${not empty car.id}">pro ${car.made} ${car.model}</c:if></h1>
 
 <c:choose>
-	<c:when test="${not empty refueling.amount}"><c:set var="method" value="put"></c:set></c:when>
-	<c:otherwise><c:set var="method" value="post"></c:set></c:otherwise>
+	<c:when test="${refueling.amount eq 0}"><c:set var="method" value="post"></c:set></c:when>
+	<c:otherwise><c:set var="method" value="put"></c:set></c:otherwise>
 </c:choose>
 
 <form:form commandName="refueling" cssClass="uk-form" method="${method}">

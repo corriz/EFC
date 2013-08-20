@@ -44,6 +44,7 @@
 			<c:forEach items="${refuelings.itemsMap}" var="refEntry">
 			<c:set value="${refEntry.key}" var="refId" />
 			<c:set value="${refEntry.value}" var="ref" />
+			<c:if test="${ref.car.id eq carId}">
 				<tr>
 					<td>${refId}</td>
 					<td>${ref.driver.firstname} ${ref.driver.lastname}</td>
@@ -56,6 +57,7 @@
 						<a href="remove?id=${ref.id}" class="uk-button-mini uk-button-danger"><i class="uk-icon-remove"></i></a>
 					</td>
 				</tr>
+			</c:if>
 			</c:forEach>
 		</tbody>
 		</table>
