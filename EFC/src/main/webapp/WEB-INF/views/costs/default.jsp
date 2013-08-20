@@ -11,4 +11,6 @@
 	</div>
 </c:if>
 
+
+
 <%@ include file="/WEB-INF/views/footer.jsp" %>
