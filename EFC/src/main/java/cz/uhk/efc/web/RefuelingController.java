@@ -85,7 +85,7 @@ public class RefuelingController {
 	 * **/
 	
 	@RequestMapping(value = "/{carId}/add", method = RequestMethod.GET)
-	public String initCostForm(@PathVariable("carId") int carId,@ModelAttribute(value="cost") Refueling refueling, Model model){
+	public String initCostForm(@PathVariable("carId") int carId,@ModelAttribute(value="refueling") Refueling refueling, Model model){
 		logger.info("Add refueling to car " + carId);
 		model.addAttribute("drivers", driversService.findAll());
 		model.addAttribute("car", carService.findOne(carId));
@@ -112,7 +112,8 @@ public class RefuelingController {
 	@RequestMapping(value="/{refId}/edit", method= RequestMethod.GET)
 	public String editCost(@PathVariable("refId") int reftId,Model model){
 		model.addAttribute("cars", carService.findAll());
-		model.addAttribute("cost", refuelingService.findOne(reftId));
+		model.addAttribute("drivers", driversService.findAll());
+		model.addAttribute("refueling", refuelingService.findOne(reftId));
 		return URL + "/add";
 	}
 	

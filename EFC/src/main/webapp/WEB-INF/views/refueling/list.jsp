@@ -4,6 +4,11 @@
 <%@page pageEncoding="UTF-8"%>
 
 <h1>Seznam všech čerpání</h1>
+<c:if test="${not empty message}">
+	<div class="uk-alert uk-alert-success" data-uk-alert>
+		<p>${message}</p>
+	</div>
+</c:if>
 <c:choose>
 <c:when test="${not empty cars.itemsMap}">
 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#car-id'}">
@@ -30,7 +35,7 @@
 				<th>Řidič</th>
 				<th>Datum</th>
 				<th>Cena</th>
-				<th>litrů</th>
+				<th>Množství</th>
 				<th>Stav</th>
 				<th>Akce</th>
 			</tr>
@@ -40,12 +45,16 @@
 			<c:set value="${refEntry.key}" var="refId" />
 			<c:set value="${refEntry.value}" var="ref" />
 				<tr>
-					<td>${ref.id}</td>
+					<td>${refId}</td>
 					<td>${ref.driver.firstname} ${ref.driver.lastname}</td>
-					<td>${ref.stat.date}</td>
-					<td>${ref.amount} l</td>
+					<td><fmt:formatDate value="${ref.stat.date}" pattern="dd. MM. yyyy HH:mm:ss" /></td>
+					<td>${ref.stat.price}</td>
+					<td>${ref.amount} ${car.fuel.unit}</td>
 					<td>${ref.stat.kilometers}</td>
-					<td><a href="">Editovat</a> <a href="remove?id=${ref.id}">Smazat</a></td>
+					<td>
+						<a href="<spring:url value="/refueling/${refId}/edit" />" class="uk-button-mini uk-button-primary"><i class="uk-icon-edit"></i></a> 
+						<a href="remove?id=${ref.id}" class="uk-button-mini uk-button-danger"><i class="uk-icon-remove"></i></a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
