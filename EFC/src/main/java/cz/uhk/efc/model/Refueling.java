@@ -5,11 +5,13 @@ package cz.uhk.efc.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import cz.uhk.efc.factory.IModelItem;
 
@@ -46,7 +48,7 @@ public class Refueling implements IModelItem,  Serializable {
 	/**
 	 * Pridelene statistiky k tomuto vydaji, kilometry + datum + cena celkem 
 	 */
-	@ManyToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "stat_id")
 	private Stats stat;
 	

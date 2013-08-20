@@ -4,16 +4,11 @@
 package cz.uhk.efc.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -44,8 +39,9 @@ public class Stats implements IModelItem,  Serializable {
 	@PrimaryKeyJoinColumn
 	private Costs costs;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "stat")
-	private List<Refueling> refuelings = new ArrayList<Refueling>();
+	@OneToOne(mappedBy = "stat")
+	@PrimaryKeyJoinColumn
+	private Refueling refuelings;
 	/**
 	 * Cena
 	 */
@@ -109,18 +105,18 @@ public class Stats implements IModelItem,  Serializable {
 		this.price = price;
 	}
 	
-	public List<Refueling> getRefuelings() {
-		return refuelings;
-	}
-	
-	public void setRefuelings(List<Refueling> refuelings) {
-		this.refuelings = refuelings;
-	}
-	
 	public Costs getCosts() {
 		return costs;
 	}
 	public void setCosts(Costs costs) {
 		this.costs = costs;
+	}
+	
+
+	public Refueling getRefuelings() {
+		return refuelings;
+	}
+	public void setRefuelings(Refueling refuelings) {
+		this.refuelings = refuelings;
 	}
 }
