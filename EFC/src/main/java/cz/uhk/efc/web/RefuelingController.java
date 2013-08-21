@@ -120,7 +120,7 @@ public class RefuelingController {
 	@RequestMapping(value = "/{refId}/edit", method = RequestMethod.PUT)
     public String processUpdateCosts(@Valid Refueling refueling, BindingResult result, @PathVariable("refId") int reftId) {
         //Refueling updateRef = refuelingService.findOne(reftId);
-		refueling.setDriver(driversService.findOne(refueling.getDriver().getId()));
+		//refueling.setDriver(driversService.findOne(refueling.getDriver().getId()));
         refueling.getStat().setDate(new Date());;
 		refuelingService.update(refueling);
         return "redirect:" + URL;
