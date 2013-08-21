@@ -51,6 +51,7 @@ public class CostsController {
 	public String initView(Model model){
 		
 		model.addAttribute("costs", costsService.findAll());
+		model.addAttribute("cars", carService.findAll());
 		
 		return URL + "/default";
 	}

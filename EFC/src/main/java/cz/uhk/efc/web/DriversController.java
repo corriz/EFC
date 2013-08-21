@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cz.uhk.efc.model.Drivers;
+import cz.uhk.efc.services.CarService;
 import cz.uhk.efc.services.DriversService;
 
 /**
@@ -33,11 +34,14 @@ public class DriversController {
 	
 	@Autowired
 	private DriversService driversService;
+	@Autowired
+	private CarService carService;
 	
 	@RequestMapping("drivers/")
 	public String renderOverView(Model model) {
 		logger.info("Show complet overview for Drivers");
 		model.addAttribute("drivers", driversService.findAll());
+		model.addAttribute("cars", carService.findAll());
 		return "drivers/default";
 	}
 	
@@ -72,7 +76,7 @@ public class DriversController {
 		logger.info("We additing this:" + driver);
 		driver.setOwn_number(UUID.randomUUID().toString());
 		driversService.create(driver);
-		redirectAttributes.addFlashAttribute("message", "Řidič "+ driver.getLastname() +" přidán");
+		redirectAttributes.addFlashAttribute("message", "Ĺ�idiÄŤ "+ driver.getLastname() +" pĹ™idĂˇn");
 		return "redirect:/drivers/";
 	} 
 	

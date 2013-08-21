@@ -10,4 +10,31 @@
 	</div>
 </c:if>
 
+<c:choose>
+<c:when test="${not empty drivers.itemsMap}">
+<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+<tbody>
+	<c:forEach items="${drivers.itemsMap}" var="driverEntry">
+	<c:set var="driver" value="${driverEntry.value}"/>
+	<c:set var="driverId" value="${driverEntry.key}"/>
+		<tr>
+			<th>${driver.lastname} ${driver.firstname}</th>
+		</tr>
+		<c:forEach items="${cars.itemsMap}" var="carEntry">
+			<c:set var="car" value="${carEntry.value}"/>
+			<c:if test="${car.driver.id eq driver.id}">
+				<tr>
+					<td>${ car.spz }</td>
+				</tr>
+			</c:if>
+		</c:forEach>
+	</c:forEach>
+</tbody>
+</table>
+</c:when>
+<c:otherwise>
+<p>Nic tu neni, pardoon!!</p>
+</c:otherwise>
+</c:choose>
+
 <%@ include file="/WEB-INF/views/footer.jsp" %>

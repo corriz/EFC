@@ -63,7 +63,7 @@
 			</div>
 
 		<div class="uk-form-row">
-			<form:button class="uk-button" type="submit" cssClass="uk-form-width-medium">Submit</form:button>
+			<form:button class="uk-button" type="submit" cssClass="uk-form-width-medium">Uložit</form:button>
 		</div>
 	</fieldset>
 </form:form>
