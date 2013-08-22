@@ -5,12 +5,10 @@
 
 <article class="uk-article">
 	<hgroup>
-		<h1 class="uk-acticle-title">Hi my web</h1>
+		<h1 class="uk-acticle-title">EFC</h1>
 	</hgroup>
-	<p class="uk-article-meta">This si my meta tag</p>
-	<p class="uk-article-lead">This is template for each backgroud from
-		Roman Michalcik</p>
-	<p>Lorem ipsim.....</p>
+	<p class="uk-article-lead">Aplikace pro evidenci spotřeby vozidel</p>
+	<p>Semestrální projekt na předmět PPRO</p>
 
 </article>
 

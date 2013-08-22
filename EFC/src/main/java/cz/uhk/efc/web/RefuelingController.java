@@ -57,6 +57,10 @@ public class RefuelingController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String initView(@ModelAttribute Refueling refuel, Model model){
+		
+		model.addAttribute("cars", carService.findAll());
+		model.addAttribute("refuelings", refuelingService.findAll());
+		
 		return URL + "/default";
 	}
 	
